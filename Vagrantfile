@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "ubuntu/xenial64"
+  config.vm.box = "ubuntu/bionic64"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -81,5 +81,14 @@ Vagrant.configure("2") do |config|
     sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
     sudo chmod +x /usr/local/bin/docker-compose
     sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
+    # nvim
+    sudo apt-get -y install neovim
+    sudo apt-get -y install python-neovim
+    sudo apt-get -y install python3-neovim
+    # ssh
+    git clone https://github.com/kaepa3/nvim.git ~/.config/nvim
+    curl https://gist.githubusercontent.com/kaepa3/b249fab0d0b23e99df57d50879339c2b/raw/9656f6620ed829744cd4209fbf49a4c6952d2394/gitconfig ~/.gitconfig
+    
   SHELL
 end

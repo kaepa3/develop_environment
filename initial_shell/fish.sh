@@ -7,7 +7,7 @@ sudo chsh -s /usr/bin/fish vagrant
 if [ ! -e ~./config ]; then
 	mkdir ~/.config
 fi
-git clone https://github.com/kaepa3/fish_config.git  ~/.config/fish
+git clone git@github.com:kaepa3/fish_config.git  ~/.config/fish
 
 # fisher
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
